@@ -1,3 +1,13 @@
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(data.table)
+
+#LOADING THE DATASET
+pm25 <-readRDS("summarySCC_PM25.rds")
+scc <- readRDS("Source_Classification_Code")
+
+#Code to produce Required plot
 annual <- pm25 %>% group_by(year) %>% 
   filter(year == 1999|2002|2005|2008) %>% 
   summarize(Annual.Total = sum(Emissions));
