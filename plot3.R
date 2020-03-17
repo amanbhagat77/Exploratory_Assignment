@@ -1,3 +1,14 @@
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(data.table)
+
+#LOADING THE DATASET
+pm25 <-readRDS("summarySCC_PM25.rds")
+scc <- readRDS("Source_Classification_Code")
+
+#CODE TO PRODUCE REQUIRED PLOT
+
 baltimore <- subset(pm25 , pm25$fips == "24510")
 
 baltimore$type <- factor(baltimore$type, levels = c("ON-ROAD", "NON-ROAD", "POINT", "NONPOINT")) #Re ordered the factor variables so that it plots as we wish
