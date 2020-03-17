@@ -1,3 +1,13 @@
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(data.table)
+
+#LOADING THE DATASET
+pm25 <-readRDS("summarySCC_PM25.rds")
+scc <- readRDS("Source_Classification_Code")
+
+#CODE TO PRODUCE REQUIRED PLOT
 baltimore <- pm25 %>% 
   filter(fips == "24510") %>% 
   group_by(year) %>% 
