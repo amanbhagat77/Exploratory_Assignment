@@ -1,3 +1,13 @@
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(data.table)
+
+#LOADING THE DATASET
+pm25 <-readRDS("summarySCC_PM25.rds")
+scc <- readRDS("Source_Classification_Code")
+
+#Code to produce Required plot
 balcal <- merge(pm25, scc,by = "SCC")
 fips_balcal <- balcal[balcal$fips == "24510" | balcal$fips == "06037"]
 aggregated.balcal <- fips_balcal %>% filter(type == "ON-ROAD") %>% group_by(fips,year,type) %>% summarize(Total.Emissions = sum(Emissions))
