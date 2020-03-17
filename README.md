@@ -12,7 +12,7 @@ For each year and for each type of PM source, the NEI records how many tons of P
 course of the entire year. The data that you will use for this assignment are for 1999, 2002, 2005, and 2008.
 
 ## Information on Data
-PM2.5 Emissions Data (\color{red}{\verb|summarySCC_PM25.rds|}summarySCC_PM25.rds): This file contains a data frame with 
+PM2.5 Emissions Data : This file contains a data frame with 
 all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008. For each year, the table contains number of tons of
 PM2.5 emitted from a specific type of source for the entire year. Here are the first few rows.
 
